@@ -1,5 +1,6 @@
 import './App.css'
 import { useStocksDashboard } from './hooks/useStocksDashboard'
+import Table from './components/Table'
 
 function App() {
   const { data, loading, error, refetch } = useStocksDashboard();
@@ -20,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>Stocks Dashboard</h1>
-      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+      {data && <Table data={data} />}
     </div>
   );
 }
