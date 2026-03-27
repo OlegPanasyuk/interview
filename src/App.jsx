@@ -1,27 +1,10 @@
 import './App.css'
-import { useStocksDashboard } from './features/stocks-dashboard/hooks/useStocksDashboard'
-import Table from './shared/components/Table'
+import StocksDashboard from './features/stocks-dashboard/stocksDashboard';
 
 function App() {
-  const { data, loading, error, refetch } = useStocksDashboard();
-
-  if (loading) {
-    return <div className="App">Loading...</div>;
-  }
-
-  if (error) {
-    return (
-      <div className="App">
-        <p>Error: {error}</p>
-        <button onClick={refetch}>Retry</button>
-      </div>
-    );
-  }
-
   return (
     <div className="App">
-      <h1>Stocks Dashboard</h1>
-      {data && <Table data={data} />}
+      <StocksDashboard />
     </div>
   );
 }
