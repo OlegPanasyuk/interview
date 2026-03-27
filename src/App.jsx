@@ -1,6 +1,6 @@
 import './App.css'
-import { useStocksDashboard } from './hooks/useStocksDashboard'
-import Table from './components/Table'
+import { useStocksDashboard } from './features/stocks-dashboard/hooks/useStocksDashboard'
+import Table from './shared/components/Table'
 
 function App() {
   const { data, loading, error, refetch } = useStocksDashboard();
